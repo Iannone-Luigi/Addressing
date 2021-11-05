@@ -8,10 +8,10 @@ The Internet Protocol (IP) has been the major technological success  in informat
 - While a companion document formulates the related prpoblem statement: [Problem Statement](https://datatracker.ietf.org/doc/draft-jia-intarea-scenarios-problems-addressing/)
 
 ## Current Working Place
-- [ETF INTAREA Working Group](https://datatracker.ietf.org/wg/intarea/documents/)
+- [IETF INTAREA Working Group](https://datatracker.ietf.org/wg/intarea/documents/)
 
 ## Discussion Venue
-- [ETF INTAREA WG Mailing-list](https://www.ietf.org/mailman/listinfo/int-area)
+- [IETF INTAREA WG Mailing-list](https://www.ietf.org/mailman/listinfo/int-area)
 
 ## IETF 112 Sidemeeting:
 More INFO: https://trac.ietf.org/trac/ietf/meeting/wiki/112sidemeetings
