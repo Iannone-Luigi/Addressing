@@ -16,6 +16,8 @@ The Internet Protocol (IP) has been the major technological success  in informat
 ## Sidemeeting:
 - [IETF 112 Info](https://trac.ietf.org/trac/ietf/meeting/wiki/112sidemeetings)
 - [IETF 112 Side Meeting Slides](Material/IETF-112-internet-addressing-side-meeting-v6-All.pdf)
+- [IETF 112 Side Meeting Video](https://www.youtube.com/watch?v=vwtoCvluREA)
+- [IETF 112 Webex Chat](Material/IETF-112-Addressing-Side-Meeting-Chat.txt)
 
 ## HotRFC
 - [IETF 112 Slides](Material/IETF%20112-internet-addressing-hotrfc-v4.pdf)

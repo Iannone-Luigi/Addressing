@@ -1,0 +1,141 @@
+﻿11/08/2021    19:06:39 PM    from Sean Turner to Everyone:	Thanks for the unexpected 10min break!
+11/08/2021    19:07:05 PM    from Luigi Iannone to Everyone:	You are welcome (we should have throught this before)
+11/08/2021    19:10:43 PM    from Robert Moskowitz to Everyone:	Is there a jabber room but only this webex chat?
+11/08/2021    19:11:25 PM    from David Lou to Everyone:	only this chat, I think
+11/08/2021    19:18:30 PM    from Michael Richardson to Everyone:	we could use hallway.
+11/08/2021    19:19:25 PM    from Olaf Kolkman to Everyone:	For clarity maybe cut and paste the two draft names here.
+11/08/2021    19:19:51 PM    from Sean Turner to Everyone:	https://datatracker.ietf.org/doc/draft-jia-intarea-internet-addressing-gap-analysis/
+11/08/2021    19:19:52 PM    from Erik Kline to Everyone:	https://github.com/Iannone-Luigi/Addresing
+11/08/2021    19:20:01 PM    from Erik Kline to Everyone:	[sic]
+11/08/2021    19:20:01 PM    from Sean Turner to Everyone:	https://datatracker.ietf.org/doc/draft-jia-intarea-scenarios-problems-addressing/
+11/08/2021    19:24:29 PM    from Lixia to Everyone:	"we use address today, and will also have it in the future" seems a big statement. How far into the future is indiciated here? What are the supporting arguments?  Would appreicate some enlightment.
+11/08/2021    19:26:36 PM    from Luigi Iannone to Everyone:	Good point. In the documents we actually state that "addresses" can be something different from what we have now, like names or certificates
+11/08/2021    19:26:51 PM    from Antoine Fressancourt to Everyone:	In my view, an address should be a locator used in a given topology. As long as we see networks as constructions with a topology, I think we will need some form of addresses. They may be very volatile, but we will somehow need them.
+11/08/2021    19:35:31 PM    from Ben Schwartz to Everyone:	One thing I see that's missing here is that network addresses are necessarily public, whereas the user's interest in many identifiable resources is not public.  We can't really talk about unified addressing across layers, because each layer comes with its own layer of confidentiality guarantees.
+11/08/2021    19:35:39 PM    from Uma Chunduri to Everyone:	A small vestige o f what Dino said is left in IS-IS, which is used for topology building :) 
+11/08/2021    19:37:43 PM    from Luigi Iannone to Everyone:	@Ben: this is an excellent point. We did discuss a bit privacy in the documents but we did not think about  privacy across layers
+11/08/2021    19:39:02 PM    from Antoine Fressancourt to Everyone:	@Ben, I think there are different dimensions to what you mention. Do you want users to use addresses, or endpoints identifiers, that are displayed but not accessible, or addresses that are not even displayed on teh network
+11/08/2021    19:39:46 PM    from Ben Schwartz to Everyone:	HTTPS URLs seems like one example of a tree-structured hierarchical locator that cannot be unified with the IP address, because the URL is confidential.
+11/08/2021    19:39:47 PM    from Michael Richardson to Everyone:	I agree!  L3 mobility!
+11/08/2021    19:41:44 PM    from Sean Turner to Everyone:	I love it!
+11/08/2021    19:42:24 PM    from Dino to Everyone:	with no sub-opitmal packet forwarding (i.e. no home/foreigh agent)
+11/08/2021    19:43:00 PM    from Dino to Everyone:	URLs find services, its what you want not where to get it
+11/08/2021    19:43:09 PM    from Dino to Everyone:	have to redine what "where" really means anymore
+11/08/2021    19:44:34 PM    from Luigi Iannone to Everyone:	Especially with virtualization we do not care "where" it is
+11/08/2021    19:45:36 PM    from Antoine Fressancourt to Everyone:	@Dinon, I agree, the definition of "Where" depends on the network's architecture?
+11/08/2021    19:45:55 PM    from Bob Moskowitz to Everyone:	And this gets back to Identity and location.  A design error from the beginning that we just will not fix.
+11/08/2021    19:46:20 PM    from Dino to Everyone:	right the topology
+11/08/2021    19:46:41 PM    from Bob Moskowitz to Everyone:	perhaps new energy can take the Identity protocols and well place them into the IP architecture.  I tried...
+11/08/2021    19:46:42 PM    from Dino to Everyone:	@bob, can we do ID/Locator without a mapping system?
+11/08/2021    19:46:51 PM    from Dino to Everyone:	and MUST be decentralized
+11/08/2021    19:47:01 PM    from Dirk Trossen to Everyone:	If host-based E2E is not the main use case anymore, how can addressing that is focussed on it help with new use cases and problems?
+11/08/2021    19:47:14 PM    from Lixia to Everyone:	The fundamental reason that the hierarchically structured URI "cannot be unified with the IP address" not just because the URL is confidential, but at a more fundamental level: they identify different things (web objects vs Internet attachment points).  One can try as many layers of "virtualization" as one wishes, but oil is not water and the two dont mix well.
+11/08/2021    19:47:41 PM    from Dino to Everyone:	agree with Dirk just said, address formats are optimizations once you decide what the overall architecture should be
+11/08/2021    19:48:11 PM    from Luigi Iannone to Everyone:	Yes, addressing is part of architectural changes
+11/08/2021    19:48:57 PM    from Bob Moskowitz to Everyone:	At least 2 different major uses.  Should we try to keep them merged, or design better for each beside the other?
+11/08/2021    19:50:11 PM    from Ben Schwartz to Everyone:	Lixia:  I agree. My point is that "internet attachment points" are effectively public: they leak their access metadata.  That's why web resources cannot safely become internet attachment points.  Similar logic applies for many other kinds of virtual objects.
+11/08/2021    19:52:13 PM    from Luigi Iannone to Everyone:	non-routable addresses were used in LISP
+11/08/2021    19:52:20 PM    from Lixia to Everyone:	"overlay" needs a clear definition. When IP started back in 1981, it built an overlay over telecom, by treating the latter as connectivities ONLY, instead of using phone numbers in building IP overlays, which is an IP network, connected by whatever means available, dialups or Ethernet or anything else.
+11/08/2021    19:56:13 PM    from Lixia to Everyone:	absolutely no one (should) proposes changes to deployed IP infrastrucdture, just as IP had no intention to change telecom in day-1, but jsut made the best use of the connectivities it offered.
+11/08/2021    19:56:28 PM    from Dino to Everyone:	and a gap implies something is missing
+11/08/2021    19:56:48 PM    from Dino to Everyone:	we have to make apps do less with the network, have less knowlegde about addresses
+11/08/2021    19:57:46 PM    from Lixia to Everyone:	Dino, I'd go one step first: apps should not have knowledge about addresses (they really dont want either, just that now some are forced to)
+11/08/2021    19:57:47 PM    from Dirk Trossen to Everyone:	@Lixia: nobody is proposing changes to deployed IP infra but trying to understand how to move beyond today, while making best use of what we have
+11/08/2021    19:57:48 PM    from Dino to Everyone:	@lixia, just make an IPv4 underlay be like another link-layer network, like ethernet, like 3GPP, like wifi
+11/08/2021    19:57:57 PM    from michael to Everyone:	decoupling between network and application is important
+11/08/2021    19:57:57 PM    from Antoine Fressancourt to Everyone:	@Lixia one drawback I see with this statement is that we will inherit very large overhead from not touching IP.
+11/08/2021    19:58:13 PM    from Dino to Everyone:	let me crystal clear, we are not doing L2 mac routing in the IPv4 underlay
+11/08/2021    19:58:52 PM    from Dirk Trossen to Everyone:	@Dino: indeed, IP is a well-working underlay, isn't it?
+11/08/2021    19:59:12 PM    from Dino to Everyone:	@dirk where IP = (IPv4 and IPv6)
+11/08/2021    19:59:15 PM    from Lixia to Everyone:	"we will inherit very large overhead from not touching IP."  Well, that's what IP did. 
+
+11/08/2021    19:59:45 PM    from Lixia to Everyone:	there is also the most benefit: we do not get dragged by IP forever.
+11/08/2021    20:00:16 PM    from Antoine Fressancourt to Everyone:	@Lixia True
+11/08/2021    20:01:22 PM    from Luigi Iannone to Everyone:	Can we "backport" some solutions developped in new "use cases" like aviation? Or at least try to distil the principles they rely on? 
+11/08/2021    20:01:55 PM    from Lixia to Everyone:	Dino, agree with you on the need of decentralization. Here is a self-advertizement: https://lixiazhangucla.blogspot.com/2021/06/internet-centralization-how-we-got-from.html
+11/08/2021    20:03:17 PM    from Alex Clemm to Everyone:	One problem is how to monetize services that are completely decentralized.  Monetization in many cases involves centralizing data... 
+11/08/2021    20:03:52 PM    from Dino to Everyone:	@lixia, good link, remember the end-to-end principle? we drifted from that for so long now
+11/08/2021    20:04:06 PM    from Lixia to Everyone:	when RFC791 was published in Sept 1981, "how to make $$" question was not answered. Smart people figure out.
+11/08/2021    20:04:07 PM    from Bob Moskowitz to Everyone:	"Bob, how do we monitize this".  Time and time again....
+11/08/2021    20:04:18 PM    from Dino to Everyone:	@alex, the endpoints montetize not the middle
+11/08/2021    20:04:52 PM    from Dino to Everyone:	my cell phone makes money for me while I have it charged on my night stand next to my bed at night
+11/08/2021    20:05:38 PM    from Lixia to Everyone:	agree with Dino that  the endpoints montetize not the middle: look, all the money on the Internet comes out of your pocket and my pockets.  Just that we are powerless eyeballs now, have little to say on today's play ground.
+11/08/2021    20:05:44 PM    from Bob Moskowitz to Everyone:	But does the provider of your phones service make money.  Why should they put in new connection services for you?
+11/08/2021    20:05:55 PM    from Dino to Everyone:	in the US, the government will pay for infra ($600B) LOL
+11/08/2021    20:06:19 PM    from Bob Moskowitz to Everyone:	Peanuts.
+11/08/2021    20:06:23 PM    from Alex Clemm to Everyone:	I am still waiting for a decentralized Facebook... 
+11/08/2021    20:06:27 PM    from Dino to Everyone:	yes @bob, they operate at the app level as well
+11/08/2021    20:06:47 PM    from Dino to Everyone:	i.e. AT&T runs a blockchain validator
+11/08/2021    20:07:28 PM    from Dino to Everyone:	@nirmala, what about DoS on infra?
+11/08/2021    20:07:49 PM    from Antoine Fressancourt to Everyone:	@Alex You can have a look at the Diaspora network (alas it is not very popular)
+11/08/2021    20:07:53 PM    from Bob Moskowitz to Everyone:	I work in highly constrained systems/networks.  Much of this won't apply in the endpoits (things in the air and control points on the ground)
+11/08/2021    20:07:59 PM    from Lixia to Everyone:	Bob, back in early 80's, I had a chance to sit in some meeting with ATT people, and heard the comments "our infrastructre is worth $600B (I might remember wrong), no one can afford changing it" 
+11/08/2021    20:09:01 PM    from Dino to Everyone:	@lixia, they have value they move packets as fast as possible routing on locators
+11/08/2021    20:09:14 PM    from Bob Moskowitz to Everyone:	Yet, when Microwave Comm Inc invested in fiber, ATT trashed their copper valuation and ran to fiber as well.
+11/08/2021    20:09:56 PM    from Dino to Everyone:	the point is you don't have to obsolete or devalue ISPs
+11/08/2021    20:10:20 PM    from Lixia to Everyone:	@Dino, when one uses IP connectivity, it can move packets as fast as possible.
+11/08/2021    20:10:21 PM    from Alex Clemm to Everyone:	@Antoine - thank you, but the point is IMHO is not a technical problem, but a monetization problem - and monetization is a lot more straightforward when you centralize... 
+11/08/2021    20:10:56 PM    from Lixia to Everyone:	But I would really like to point out that security is the #1 challenge facing Internet today, not the speed.
+11/08/2021    20:11:20 PM    from Dirk Trossen to Everyone:	@Lixia +1 on security
+11/08/2021    20:11:21 PM    from Bob Moskowitz to Everyone:	Yes. to security.
+11/08/2021    20:11:34 PM    from Luigi Iannone to Everyone:	+1 on security
+11/08/2021    20:11:35 PM    from Dino to Everyone:	@lixia, and it is a problem because all our packets flow to 6 big boys
+11/08/2021    20:11:37 PM    from Antoine Fressancourt to Everyone:	@Alex, that's the whole dilemma with decentralization or P2P service models. If you look at privacy, this is exactly the dilemma TOR is facing
+11/08/2021    20:11:44 PM    from Luigi Iannone to Everyone:	I would argue that privacy is also important
+11/08/2021    20:11:45 PM    from David Lou to Everyone:	+1 security
+11/08/2021    20:12:09 PM    from Bob Moskowitz to Everyone:	thus overlays again.  But let's be honest, IP is all about overlays.  TCP overlaid on IP with is...
+11/08/2021    20:12:42 PM    from Dino to Everyone:	@bob, transport overlays on the network is different than a network layer overlay
+11/08/2021    20:12:46 PM    from Bob Moskowitz to Everyone:	Overlays cost.  Mostly in throughput.  But they are needed.
+11/08/2021    20:13:10 PM    from Lixia to Everyone:	agree thtat privacy is important.  But when Google knows you 100 times better than your self, TLS is not gonna solve privacy problem in a funamental way.
+11/08/2021    20:13:25 PM    from Dino to Everyone:	Google is a big boy ;-)
+11/08/2021    20:13:28 PM    from Bob Moskowitz to Everyone:	Yes and no.  It is more context. and what is connected.  It is all shown in the stacks model.
+11/08/2021    20:13:42 PM    from Dino to Everyone:	they just hit $2T in market cap this morning ;-)
+11/08/2021    20:13:53 PM    from Bob Moskowitz to Everyone:	Privacy is different from security.
+11/08/2021    20:14:06 PM    from Antoine Fressancourt to Everyone:	@Bob exactly
+11/08/2021    20:14:27 PM    from Luigi Iannone to Everyone:	May be I share everything with google but nobody along the path should know that I speak to google  and TLS does not protect that aspect
+11/08/2021    20:14:31 PM    from Lixia to Everyone:	agree that Privacy is different from security. one question is which one goes first.
+11/08/2021    20:14:43 PM    from Dino to Everyone:	agree @lixia
+11/08/2021    20:14:56 PM    from Bob Moskowitz to Everyone:	I need to secure my C2 so that someone cannot take control of my UA.  But I cannot effectively hide that my UA is up in the sky over you...
+11/08/2021    20:15:09 PM    from Antoine Fressancourt to Everyone:	You can't have privacy without encryption, which most people tend to associate with security
+11/08/2021    20:15:35 PM    from Bob Moskowitz to Everyone:	Security.  It is achievable.  Privacy is more a social definition.
+11/08/2021    20:15:44 PM    from Dino to Everyone:	encryption is mandatory, there should be no discussion on making it optional
+11/08/2021    20:15:59 PM    from Dino to Everyone:	and for privacy, you make addresses (EIDs) ephemeral
+11/08/2021    20:16:13 PM    from Dirk Kutscher to Everyone:	or don't require them :-)
+11/08/2021    20:16:28 PM    from Antoine Fressancourt to Everyone:	@Bob, I agree that privacy has a social dimension, but there are formal definitions for privacy that are not bound to social norms
+11/08/2021    20:16:41 PM    from Dino to Everyone:	if an app is going to talk to more than one thing, you need an ID of some sort
+11/08/2021    20:17:00 PM    from Yihao Jia to Everyone:	security for the first priority. If we have no security, we do not get any privacy
+11/08/2021    20:17:16 PM    from Dino to Everyone:	@luigi, as does BLE devices and why we need BLE repeaters
+11/08/2021    20:17:22 PM    from Antoine Fressancourt to Everyone:	http://www.maroki.de/pub/dphistory/2010_Anon_Terminology_v0.34.pdf
+11/08/2021    20:17:34 PM    from Bob Moskowitz to Everyone:	I doubt it.
+11/08/2021    20:17:57 PM    from Dino to Everyone:	iot devices are mostly unidirectional, and that helps with security issues
+11/08/2021    20:18:14 PM    from Antoine Fressancourt to Everyone:	@Bob, the link before gives formal definitions for several concepts associated to privacy
+11/08/2021    20:18:22 PM    from Dino to Everyone:	IOT devices, if IP stacked, should send each packet with a differrent address
+11/08/2021    20:19:01 PM    from Bob Moskowitz to Everyone:	But need Identity.  COSE?
+11/08/2021    20:19:59 PM    from Bob Moskowitz to Everyone:	See my privacy discussion in draft-ietf-drip-rid
+11/08/2021    20:20:07 PM    from Bob Moskowitz to Everyone:	Or rather no privacy, sorry.
+11/08/2021    20:21:11 PM    from Antoine Fressancourt to Everyone:	@Bob, I will look at this draft, thank you
+11/08/2021    20:21:56 PM    from Dino to Everyone:	I think the complexity moved up stack @colin
+11/08/2021    20:22:11 PM    from Dino to Everyone:	agree bits are cheap @colin
+11/08/2021    20:22:44 PM    from Luigi Iannone to Everyone:	We do not talk about replacing the addressing model, it is about make it evolve
+11/08/2021    20:23:23 PM    from Dino to Everyone:	@colin - do you think CDNs in our current network is a feature or a bug?
+11/08/2021    20:23:44 PM    from Dino to Everyone:	both okay ;-)
+11/08/2021    20:23:51 PM    from Luigi Iannone to Everyone:	Programmability is usefull to support evolution (including addressineg ;-))
+11/08/2021    20:24:50 PM    from Dino to Everyone:	agree @stewart
+11/08/2021    20:24:54 PM    from Dirk Kutscher to Everyone:	@Luigi, I guess the other perspective is that it does not need to evolve (or cannot be changed anymore). 
+11/08/2021    20:25:09 PM    from Dino to Everyone:	lets talk about new features we want in the network
+11/08/2021    20:25:14 PM    from Dirk Kutscher to Everyone:	+1
+11/08/2021    20:25:18 PM    from Luigi Iannone to Everyone:	I would agree on "cannot be replaced"
+11/08/2021    20:25:34 PM    from Luigi Iannone to Everyone:	I believe it can evolve
+11/08/2021    20:26:39 PM    from Dirk Kutscher to Everyone:	I would take CDNs (and hyperscaler edge-to-cloud systems) as examples of relevant use cases that could be served better.
+11/08/2021    20:26:56 PM    from Dirk Trossen to Everyone:	@DirkK +1
+11/08/2021    20:27:20 PM    from Antoine Fressancourt to Everyone:	Addresses should be backward compatible. We may live with IP forever, but that should not prevent us from using other types of addresses if there is a use case for those and a deployment supporting it.
+11/08/2021    20:27:45 PM    from Bob Moskowitz to Everyone:	What I said.
+11/08/2021    20:28:26 PM    from Antoine Fressancourt to Everyone:	The beauty of discussion, in the end we agree on the main things ;-)
+11/08/2021    20:28:34 PM    from Bob Moskowitz to Everyone:	But how to add network support for more headers
+11/08/2021    20:29:01 PM    from Bob Moskowitz to Everyone:	I need to go.  I will join the intarea list.
+11/08/2021    20:29:14 PM    from Bob Moskowitz to Everyone:	bye all.
+11/08/2021    20:29:29 PM    from Antoine Fressancourt to Everyone:	In the same way we are adding support for IPv6: we deploy new equipment, it gets replaced over time, and support for new things start to burgeaon
+11/08/2021    20:30:35 PM    from Olaf Kolkman to Everyone:	The mailinglist being the Int mailinglist, correct?
+11/08/2021    20:30:46 PM    from David Lou to Everyone:	yes
+11/08/2021    20:31:30 PM    from Luigi Iannone to Everyone:	yes the INTAREA mailing list
+11/08/2021    20:31:59 PM    from Dino to Everyone:	thank you organizers
